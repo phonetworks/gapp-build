@@ -1,0 +1,171 @@
+// Elements
+
+* {
+    .box-sizing(border-box);
+    .placeholder-color(tint(@secondary-color, 50%));
+}
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 3.25em;
+    font-size: @font-size-default;
+    line-height: @font-size-default;
+    color: fade(@text-color-strong, 65%);
+    .regular-font;
+    letter-spacing: -.0075em;
+}
+a {
+    cursor: pointer;
+    color: @primary-color;
+    text-decoration: none;
+}
+b {
+    .bold-font;
+}
+svg {
+    pointer-events: none;
+}
+input, textarea, button {
+    width: 100%;
+    padding: .75em 1em;
+    border: none;
+    .border-radius(@border-radius-small);
+    outline: none;
+}
+input, textarea {
+    color: tint(@secondary-color, 50%);
+    .regular-font;
+    font-size: 1em;
+    line-height: 1em;
+    border: 1px solid fade(black, 10%);
+    background-color: @contrast-color;
+}
+textarea {
+    resize: none;
+}
+button {
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    .bold-font;
+    .single-line-text;
+    text-transform: uppercase;
+    .transition(background-color .35s ease);
+    .background-color-states(@button-color);
+    &[disabled] {
+        opacity: .5;
+    }
+    &.loading {
+        background-image: linear-gradient(-45deg, transparent 25%, rgba(0, 0, 0, .1) 25%, rgba(0, 0, 0, .1) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, .1) 75%);
+        background-size: 2.5em 2.5em;
+        .animation(loading-stripes 10s infinite linear);
+    }
+}
+form {
+    input, textarea {
+        position: relative;
+        margin-bottom: .5em;
+        .transition(border-color .35s ease);
+        &.error {
+            border-color: @danger-color;
+            .animation(error-shake normal .35s ease-in-out);
+        }
+        & + button {
+            margin-top: .25em;
+        }
+    }
+    .option {
+        display: block;
+        height: 3.3em;
+        margin-bottom: -2em;
+        a {
+            display: inline-block;
+            float: left;
+            opacity: 1;
+            color: @text-color-normal;
+            font-size: .9em;
+            line-height: 3.3em / .9;
+            text-align: center;
+            .transition(opacity .35s ease);
+            &:hover {
+                opacity: .75;
+            }
+        }
+        &.single {
+            a {
+                width: 100%;
+            }
+        }
+        &.double {
+            a {
+                width: 50%;
+            }
+        }
+    }
+}
+
+// Responsive
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    body {
+        font-size: 13px;
+        line-height: 13px;
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    body {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 15px;
+        line-height: 15px;
+    }
+}
+
+/* 1024 ≤ Window Width < 1152 */
+@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+    body {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+/* 1152 ≤ Window Width < 1280 */
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+    body {
+        font-size: 17px;
+        line-height: 17px;
+    }
+}
+
+/* 1280 ≤ Window Width < 1440 */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    body {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+
+/* 1440 ≤ Window Width < 1680 */
+@media only screen and (min-width: 1440px) and (max-width: 1679px) {
+    body {
+        font-size: 19px;
+        line-height: 19px;
+    }
+}
+
+/* 1680 ≤ Window Width */
+@media only screen and (min-width: 1680px) {
+    body {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}

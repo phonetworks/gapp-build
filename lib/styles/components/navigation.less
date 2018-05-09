@@ -1,0 +1,60 @@
+@import '../common.less';
+
+nav.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.25em;
+    text-align: center;
+    background-color: rgb(93, 60, 246);
+    .add {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3.25em;
+        height: 3.25em;
+        .transition(transform .35s ease);
+        img {
+            margin: 25%;
+        }
+    }
+    .logo {
+        position: relative;
+        top: .6em;
+        width: auto;
+        height: inherit;
+    }
+}
+
+body.push nav.navigation .add {
+    .transform(rotate(45deg));
+}
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    nav.navigation {
+        .add {
+            display: inline-block;
+        }
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    nav.navigation {
+        .add {
+            display: inline-block;
+        }
+    }
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    nav.navigation {
+        .add {
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// Typography
+
+.regular-font() {
+    font-family: "Barlow";
+    font-weight: 400;
+}
+
+.bold-font() {
+    font-family: "Barlow";
+    font-weight: 600;
+}
+
+.single-line-text() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Shortcuts
+
+.no-margin() {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin: 0;
+}
+
+.no-padding() {
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding: 0;
+}
+
+.disable-selection() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// Fixes
+
+.clearfix() {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
