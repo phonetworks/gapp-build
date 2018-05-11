@@ -43,6 +43,34 @@ input, textarea {
 textarea {
     resize: none;
 }
+.dropdown {
+    overflow: hidden;
+    position: relative;
+    height: 2em;
+    margin-bottom: .5em;
+    border: 1px solid fade(black, 10%);
+    .border-radius(@border-radius-small);
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &.error {
+        border-color: @danger-color;
+        .animation(error-shake normal .35s ease-in-out);
+    }
+    select {
+        width: 100%;
+        height: 2em;
+        padding: .5em .75em;
+        font-size: 1em;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: @text-color-normal;
+        option {
+            width: 100%;
+        }
+    }
+}
 button {
     cursor: pointer;
     font-size: .9em;

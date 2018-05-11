@@ -51,8 +51,33 @@ div.modal {
             vertical-align: top;
         }
     }
+    .warning {
+        display: inline-block;
+        width: 100%;
+        font-size: .9em;
+        text-align: center;
+        ul {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: .75em 5%;
+            &.fail {
+                background-color: @danger-color;
+            }
+            li {
+                margin-bottom: .25em;
+                color: white;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
     .content {
         padding: 2em;
+        .hidden {
+            display: none;
+        }
     }
     button {
         float: left;
