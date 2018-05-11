@@ -1,0 +1,30 @@
+ul.settings {
+    margin: 0;
+    padding: 1em 1.5em;
+    font-size: .9em;
+    list-style: none;
+    li {
+        line-height: 165%;
+        & > * {
+            margin-right: .25em;
+        }
+        b {
+            &.identifier {
+                &::after {
+                    content: ":";
+                }
+            }
+        }
+        a {
+            opacity: 1;
+            margin-left: .25em;
+            .transition(opacity .35 ease);
+            &:hover {
+                opacity: .75;
+            }
+            svg {
+                width: .65em;
+            }
+        }
+    }
+}

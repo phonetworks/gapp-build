@@ -1,10 +1,11 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-console.log(__dirname)
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
-    entry: [
-        './lib/app.js'
-    ],
+    entry: './lib/app.js',
     module: {
         rules: [
             {
@@ -51,6 +52,12 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./lib/template.html",
             filename: "../index.html"
+        }),
+        new UglifyJsPlugin({
+            sourceMap: true
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
         })
     ],
     devServer: {
