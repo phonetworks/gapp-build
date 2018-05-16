@@ -1,6 +1,6 @@
 @import '../common.less';
 
-nav.navigation {
+nav#navigation {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,13 +28,13 @@ nav.navigation {
     }
 }
 
-body.push nav.navigation .add {
+body.push nav#navigation .add {
     .transform(rotate(45deg));
 }
 
 /* Window Width < 480 */
 @media only screen and (max-width: 479px) {
-    nav.navigation {
+    nav#navigation {
         .add {
             display: inline-block;
         }
@@ -43,7 +43,7 @@ body.push nav.navigation .add {
 
 /* 480 ≤ Window Width < 768 */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-    nav.navigation {
+    nav#navigation {
         .add {
             display: inline-block;
         }
@@ -52,7 +52,7 @@ body.push nav.navigation .add {
 
 /* 768 ≤ Window Width < 1024 */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    nav.navigation {
+    nav#navigation {
         .add {
             display: inline-block;
         }

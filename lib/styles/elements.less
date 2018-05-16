@@ -40,35 +40,64 @@ input, textarea {
     border: 1px solid fade(black, 10%);
     background-color: @contrast-color;
 }
+input {
+    height: 2.5em;
+}
 textarea {
     resize: none;
 }
 .dropdown {
     overflow: hidden;
     position: relative;
-    height: 2em;
-    margin-bottom: .5em;
+    padding: 0 .5em;
     border: 1px solid fade(black, 10%);
     .border-radius(@border-radius-small);
-    &:last-child {
-        margin-bottom: 0;
-    }
     &.error {
         border-color: @danger-color;
         .animation(error-shake normal .35s ease-in-out);
     }
     select {
         width: 100%;
-        height: 2em;
-        padding: .5em .75em;
+        height: 2.5em;
+        padding: .75em 1em;
+        color: @text-color-normal;
+        .regular-font;
         font-size: 1em;
         border: none;
         outline: none;
         background: transparent;
-        color: @text-color-normal;
         option {
             width: 100%;
         }
+    }
+}
+.wrapper {
+    border: 1px solid fade(black, 10%);
+    .border-radius(@border-radius-small);
+    &.error {
+        border-color: @danger-color;
+        .animation(error-shake normal .35s ease-in-out);
+    }
+    &.labeled {
+        padding: 0 !important;
+        .clearfix;
+        & > * {
+            display: inline-block;
+            float: left;
+            width: 50%;
+        }
+        b {
+            padding-left: .5em;
+            line-height: 2.5em;
+            background-color: fade(black, 5%);
+        }
+        select {
+            width: calc(50% - 1em);
+            margin-left: .5em;
+        }
+    }
+    input, textarea, select {
+        border: none;
     }
 }
 button {
