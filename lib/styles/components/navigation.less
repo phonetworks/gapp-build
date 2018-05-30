@@ -26,6 +26,26 @@ nav#navigation {
         width: auto;
         height: inherit;
     }
+    .save {
+        display: inline;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        margin: .5em;
+        padding: .25em .5em;
+        color: yellow;
+        font-size: 1em;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: 3px solid yellow;
+        .border-radius(@border-radius-large);
+        .transition(letter-spacing .35s ease);
+        &:hover {
+            letter-spacing: .15em;
+        }
+    }
 }
 
 body.push nav#navigation .add {
