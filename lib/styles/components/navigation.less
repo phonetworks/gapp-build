@@ -39,13 +39,13 @@ nav#navigation {
         letter-spacing: .1em;
         text-transform: uppercase;
         background-color: transparent;
-        border: 2px solid yellow;
+        border: 2px solid white;
         .border-radius(@border-radius-medium);
         background-color: transparent;
         .transition(all .1s ease);
         &:hover {
             color: rgb(93, 60, 246);
-            background-color: yellow;
+            background-color: white;
             svg {
                 path {
                     fill: rgb(93, 60, 246);
@@ -53,8 +53,24 @@ nav#navigation {
             }
         }
         &.done {
+            color: yellow;
+            border-color: yellow;
             &::after {
                 content: "d";
+            }
+            &:hover {
+                color: rgb(93, 60, 246);
+                background-color: yellow !important;
+                svg {
+                    path {
+                        fill: rgb(93, 60, 246);
+                    }
+                }
+            }
+            svg {
+                path {
+                    fill: yellow;
+                }
             }
         }
         svg {
