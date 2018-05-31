@@ -26,24 +26,47 @@ nav#navigation {
         width: auto;
         height: inherit;
     }
-    .save {
-        display: inline;
+    #save {
+        display: inline-block;
         position: absolute;
         top: 0;
         right: 0;
         width: auto;
         margin: .5em;
-        padding: .25em .5em;
-        color: yellow;
+        padding: .25em .5em .25em 2em;
+        color: white;
         font-size: 1em;
-        letter-spacing: .25em;
+        letter-spacing: .1em;
         text-transform: uppercase;
         background-color: transparent;
-        border: 3px solid yellow;
-        .border-radius(@border-radius-large);
-        .transition(letter-spacing .35s ease);
+        border: 2px solid yellow;
+        .border-radius(@border-radius-medium);
+        background-color: transparent;
+        .transition(all .1s ease);
         &:hover {
-            letter-spacing: .15em;
+            color: rgb(93, 60, 246);
+            background-color: yellow;
+            svg {
+                path {
+                    fill: rgb(93, 60, 246);
+                }
+            }
+        }
+        &.done {
+            &::after {
+                content: "d";
+            }
+        }
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: calc(2em - 4px);
+            height: calc(2em - 4px);
+            path {
+                fill: white;
+            }
         }
     }
 }
