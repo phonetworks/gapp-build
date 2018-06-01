@@ -32,15 +32,18 @@ nav#navigation {
         top: 0;
         right: 0;
         width: auto;
-        margin: .5em;
-        padding: .25em .5em .25em 2em;
+        height: 2em;
+        margin: .625em;
+        padding: 0;
+        padding-right: .5em;
+        padding-left: calc(2em - 2px);
         color: white;
         font-size: 1em;
         letter-spacing: .1em;
         text-transform: uppercase;
         background-color: transparent;
         border: 2px solid white;
-        .border-radius(@border-radius-medium);
+        .border-radius(@border-radius-small);
         background-color: transparent;
         .transition(all .1s ease);
         &:hover {
@@ -53,14 +56,14 @@ nav#navigation {
             }
         }
         &.done {
-            color: yellow;
-            border-color: yellow;
+            color: rgb(255, 255, 127);
+            border-color: rgb(255, 255, 127);
             &::after {
                 content: "d";
             }
             &:hover {
-                color: rgb(93, 60, 246);
-                background-color: yellow !important;
+                color: rgb(93, 60, 246) !important;
+                background-color: rgb(255, 255, 127) !important;
                 svg {
                     path {
                         fill: rgb(93, 60, 246);
@@ -69,7 +72,7 @@ nav#navigation {
             }
             svg {
                 path {
-                    fill: yellow;
+                    fill: rgb(255, 255, 127);
                 }
             }
         }
@@ -83,6 +86,12 @@ nav#navigation {
             path {
                 fill: white;
             }
+        }
+        span {
+            display: inline-block;
+            height: calc(2em - 4px);
+            font-size: 1em;
+            line-height: calc(2em - 4px);
         }
     }
 }
