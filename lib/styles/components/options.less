@@ -1,12 +1,44 @@
 @import '../common.less';
 
 aside#options {
-    position: relative;
-    left: 0;
+    position: fixed;
     z-index: 8;
+    top: 3.25em;
+    right: 0;
+    bottom: 0;
     width: 240px;
     height: calc(100vh - 3.25em);
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
-    .transition(left .35s ease);
+    .transition(right .35s ease);
+}
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    aside#options {
+        right: -240px;
+        &.open {
+            right: 0;
+        }
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    aside#options {
+        right: -240px;
+        &.open {
+            right: 0;
+        }
+    }
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    aside#options {
+        right: -240px;
+        &.open {
+            right: 0;
+        }
+    }
 }

@@ -3,21 +3,13 @@
 main#content {
     overflow: hidden;
     display: inline-block;
-    width: calc(100% - 240px);
+    width: calc(100% - 480px);
     min-height: calc(100vh - 3.25em);
     margin-left: 240px;
     background-image: linear-gradient(white, rgb(247, 251, 255));
     .clearfix;
-    &.optioned {
-        section {
-            width: calc(100% - 240px);
-        }
-    }
     & > * {
         float: left;
-    }
-    aside {
-        margin-right: -240px;
     }
 }
 
