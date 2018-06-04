@@ -1,0 +1,46 @@
+div.attributes {
+    margin: 0;
+    padding: 1em 1.5em;
+    font-size: .9em;
+    list-style: none;
+    div.attribute {
+        width: 100%;
+        line-height: 165%;
+        & > * {
+            margin-right: .25em;
+        }
+        .information {
+            .bold-font;
+            svg {
+                width: .9em;
+                margin-left: .15em;
+                path {
+                    fill: @text-color-normal;
+                }
+            }
+        }
+        a {
+            opacity: 1;
+            margin-left: 1em;
+            .transition(opacity .35 ease);
+            &:hover {
+                opacity: .75;
+            }
+            svg {
+                width: .65em;
+            }
+        }
+        svg {
+            vertical-align: middle;
+        }
+    }
+}
+
+.tippy-popper {
+    .tippy-tooltip {
+        padding: .2rem;
+        .arrow-regular {
+            margin-left: .3rem;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.ui-sortable {
+    display: block;
+    position: relative;
+    overflow: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    &::after, &::before {
+        content: " ";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+    .ui-sortable-item {
+        float: left;
+        &.ui-sortable-dragging {
+            position: absolute;
+            z-index: 1688;
+        }
+        .handle {
+            cursor: move;
+            svg {
+                width: .65em;
+                margin-right: .5em;
+                vertical-align: middle;
+                path {
+                    fill: @text-color-weak;
+                }
+            }
+        }
+    }
+    .ui-sortable-placeholder {
+        opacity: .5;
+        display: none;
+        &.visible {
+            display: block;
+            z-index: -1;
+        }
+    }
+}
