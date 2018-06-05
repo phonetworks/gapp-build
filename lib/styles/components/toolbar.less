@@ -11,6 +11,10 @@ aside#toolbar {
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
     .transition(left .35s ease);
+    &.disabled {
+        visibility: hidden;
+        left: -240px !important;
+    }
 }
 
 /* Window Width < 480 */

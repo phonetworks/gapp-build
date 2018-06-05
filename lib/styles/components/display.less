@@ -1,5 +1,19 @@
 @import '../common.less';
 
 section.display {
+    display: block;
+    position: relative;
     width: 100%;
+    height: calc(100vh - 3.25em);
+    .empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        p {
+            width: 100%;
+            line-height: 135%;
+        }
+    }
 }
