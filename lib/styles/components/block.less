@@ -19,26 +19,21 @@ div.block {
         background-color: fade(black, 5%);
         a {
             display: inline-block;
+            .box-sizing(content-box);
             opacity: 1;
             float: right;
-            width: 2.5em;
-            height: 2.5em;
-            line-height: 2.5em;
+            padding: .625em;
             text-align: center;
+            border-left: 2px solid rgba(255, 255, 255, 1);
             .transition(opacity .35 ease);
             &:hover {
                 opacity: .75;
             }
             svg {
-                width: 1em;
-                height: auto;
+                display: block;
+                width: 1.25em;
+                height: 1.25em;
                 vertical-align: middle;
-                &.add {
-                    width: 1.1em;
-                }
-                &.edit {
-                    width: .8em;
-                }
             }
         }
     }

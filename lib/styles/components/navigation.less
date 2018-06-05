@@ -26,17 +26,14 @@ nav#navigation {
         width: auto;
         height: inherit;
     }
-    #save {
+    button {
         display: inline-block;
-        position: absolute;
-        top: 0;
-        right: 0;
+        position: relative;
+        float: right;
         width: auto;
         height: 2em;
         margin: .625em;
-        padding: 0;
-        padding-right: .5em;
-        padding-left: calc(2em - 2px);
+        padding: .25em;
         color: white;
         font-size: 1em;
         letter-spacing: .1em;
@@ -53,6 +50,19 @@ nav#navigation {
                 path {
                     fill: rgb(93, 60, 246);
                 }
+            }
+        }
+        &#save {
+            padding: 0;
+            padding-left: calc(2em - 2px);
+            padding-right: .5em;
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(2em - 4px);
+                height: calc(2em - 4px);
+                display: inline-block;
             }
         }
         &.done {
@@ -80,12 +90,8 @@ nav#navigation {
             display: none;
         }
         svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: inline-block;
-            width: calc(2em - 4px);
-            height: calc(2em - 4px);
+            width: calc(1.5em - 4px);
+            height: calc(1.5em - 4px);
             path {
                 fill: white;
             }

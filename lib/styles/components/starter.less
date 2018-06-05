@@ -14,16 +14,31 @@ section.starter {
         .border-radius(@border-radius-medium);
         background-color: rgb(237, 239, 241);
         transform: translate(-50%, -50%);
-        b {
-            line-height: 135%;
+        &::before {
+            content: "Howdy!";
+            position: absolute;
+            top: -1.5em;
+            left: 0;
+            font-size: 1.25em;
+            width: 100%;
+            color: rgb(93, 60, 246);
+            .bold-font;
         }
         p {
             width: 100%;
-            margin-top: 1.5em;
+            line-height: 135%;
+            margin: 0;
+            & + p {
+                margin-top: 1.5em;
+            }
+            a {
+                .text-color-states(rgb(93, 60, 246));
+            }
         }
         button {
             display: inline-block;
             width: auto;
+            margin-top: 1em;
             .background-color-states(rgb(93, 60, 246));
         }
     }
