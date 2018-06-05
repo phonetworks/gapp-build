@@ -10,10 +10,15 @@ ul.tools {
         padding-left: 1.5em;
         line-height: calc(3.25em - 1px);
         border-bottom: 1px solid fade(black, 10%);
+        background-color: transparent;
+        .transition(background-color .15s ease);
         cursor: pointer;
         .clearfix;
         &:hover {
             background-color: rgba(0, 127, 255, .035);
+            svg {
+                opacity: 1;
+            }
         }
         & > * {
             float: left;
@@ -25,11 +30,13 @@ ul.tools {
         }
         svg {
             display: inline-block;
+            opacity: .65;
             float: right !important;
             width: 1em;
             height: calc(3.25em - 1px);
             margin-right: 1em;
             fill: @text-color-weak;
+            .transition(opacity .15s ease);
             &.edit {
                 padding: 0 .05em 0 .1em;
             }
