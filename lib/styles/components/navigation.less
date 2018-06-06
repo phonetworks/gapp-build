@@ -33,6 +33,7 @@ nav#navigation {
         width: auto;
         height: 2em;
         margin: .625em;
+        margin-right: 0;
         padding: .25em;
         color: white;
         font-size: 1em;
@@ -43,6 +44,9 @@ nav#navigation {
         .border-radius(@border-radius-small);
         background-color: transparent;
         .transition(all .1s ease);
+        &:first-of-type {
+            margin-right: .625em;
+        }
         &:hover {
             color: rgb(93, 60, 246);
             background-color: white;
