@@ -73,6 +73,13 @@ div.modal {
             }
         }
     }
+    .information {
+        padding: .5em 0;
+        color: white;
+        line-height: 150%;
+        text-align: center;
+        background-color: @text-color-weak;
+    }
     .content {
         padding: 2em;
         & > * {
@@ -90,6 +97,28 @@ div.modal {
             display: block;
             text-align: center;
             opacity: .65;
+        }
+        & > table {
+            margin: 0 auto;
+            font-size: 1.1em;
+            tr {
+                & > *:first-child {
+                    color: @text-color-normal;
+                    padding-right: 1em;
+                }
+                th {
+                    padding-bottom: .5em;
+                }
+                td {
+                    color: @text-color-weak;
+                    b {
+                        display: inline-block;
+                        position: relative;
+                        top: -.1em;
+                        height: 1.1em;
+                    }
+                }
+            }
         }
         .radioblock {
             padding: .75em 1em;
