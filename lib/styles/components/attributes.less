@@ -5,8 +5,25 @@ div.attributes {
     div.attribute {
         width: 100%;
         line-height: 165%;
+        &.fixed {
+            .handle {
+                visibility: hidden;
+            }
+        }
         & > * {
             margin-right: .25em;
+        }
+        .handle {
+            width: 1em;
+            cursor: move;
+            svg {
+                width: .65em;
+                margin-right: .5em;
+                vertical-align: middle;
+                path {
+                    fill: @text-color-weak;
+                }
+            }
         }
         .information {
             .bold-font;
@@ -24,6 +41,10 @@ div.attributes {
             .transition(opacity .35 ease);
             &:hover {
                 opacity: .75;
+            }
+            &.disabled {
+                opacity: .5;
+                pointer-events: none;
             }
             svg {
                 width: .65em;
