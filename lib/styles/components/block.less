@@ -29,6 +29,19 @@ div.block {
             &:hover {
                 opacity: .75;
             }
+            b {
+                display: block;
+                height: 1.25em;
+                .text-color-states(rgb(0, 182, 105));
+                line-height: 1.25em;
+                &.active {
+                    .text-color-states(rgb(255, 63, 95));
+                    &::before {
+                        content: "\002716";
+                        margin-right: .25em;
+                    }
+                }
+            }
             svg {
                 display: block;
                 width: 1.25em;
