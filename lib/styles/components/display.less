@@ -16,4 +16,46 @@ section.display {
             line-height: 135%;
         }
     }
+    .vis-network {
+        .vis-navigation {
+            position: absolute;
+            right: 1.25em;
+            bottom: 1.25em;
+            width: 4.5em;
+            height: 2.1em;
+            .vis-button {
+                display: none;
+                opacity: 1;
+                width: 2.1em;
+                height: 2.1em;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                cursor: pointer;
+                .transition(opacity .15s ease);
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                &:hover {
+                    opacity: .85;
+                }
+                &:active {
+                    opacity: 1;
+                }
+                &.vis-zoomOut {
+                    display: block;
+                    float: left;
+                    background-image: url("../../images/icons/zoom-out.svg");
+                }
+                &.vis-zoomIn {
+                    display: block;
+                    float: right;
+                    background-image: url("../../images/icons/zoom-in.svg");
+                }
+            }
+        }
+    }
 }
