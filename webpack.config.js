@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: './lib/app.js',
@@ -47,17 +48,41 @@ module.exports = {
         publicPath: "lib/",
         filename: 'scripts/bundle.js'
     },
+    optimization: {
+        nodeEnv: 'production',
+        minimize: true,
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    mangle: true,
+                    compress: {
+                        warnings: false,
+                        pure_getters: true,
+                        unsafe: true,
+                        unsafe_comps: true,
+                        conditionals: true,
+                        unused: true,
+                        comparisons: true,
+                        sequences: true,
+                        dead_code: true,
+                        evaluate: true,
+                        if_return: true,
+                        join_vars: true
+                    },
+                    output: {
+                        comments: false
+                    }
+                }
+            })
+        ]
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./lib/template.html",
             filename: "../index.html"
         }),
-        new UglifyJsPlugin({
-            sourceMap: true
-        }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"production"'
-        })
+        //new BundleAnalyzerPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin()
     ],
     devServer: {
         contentBase: __dirname,
