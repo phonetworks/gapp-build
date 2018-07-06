@@ -1,29 +1,49 @@
-@import '../common.less';
-
 aside#toolbar {
-    overflow-y: scroll;
     position: fixed;
     z-index: 9;
     top: 3.25em;
     bottom: 0;
     left: 0;
-    width: 240px;
+    width: 15em;
     height: auto;
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
     .transition(left .35s ease);
     &.disabled {
         visibility: hidden;
-        left: -240px !important;
+        left: -15em !important;
+    }
+    & > .add {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: -3.25em;
+        width: 3.25em;
+        height: 3.25em;
+        .transition(transform .35s ease);
+        img {
+            margin: 25%;
+        }
+    }
+}
+
+body.push {
+    aside#toolbar {
+        & > .add {
+            .transform(rotate(45deg));
+        }
     }
 }
 
 /* Window Width < 480 */
 @media only screen and (max-width: 479px) {
     aside#toolbar {
-        left: -240px;
+        left: -15em;
         &.open {
             left: 0;
+        }
+        & > .add {
+            display: inline-block;
         }
     }
 }
@@ -31,9 +51,12 @@ aside#toolbar {
 /* 480 ≤ Window Width < 768 */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     aside#toolbar {
-        left: -240px;
+        left: -15em;
         &.open {
             left: 0;
+        }
+        & > .add {
+            display: inline-block;
         }
     }
 }
@@ -41,9 +64,12 @@ aside#toolbar {
 /* 768 ≤ Window Width < 1024 */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     aside#toolbar {
-        left: -240px;
+        left: -15em;
         &.open {
             left: 0;
+        }
+        & > .add {
+            display: inline-block;
         }
     }
 }

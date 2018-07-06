@@ -2,7 +2,7 @@
 
 * {
     .box-sizing(border-box);
-    .placeholder-color(tint(@secondary-color, 50%));
+    .placeholder-color(@text-color-weak);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
@@ -38,12 +38,12 @@ input, textarea, button {
     outline: none;
 }
 input, textarea {
-    color: tint(@secondary-color, 50%);
+    color: @text-color-normal;
     .regular-font;
     font-size: 1em;
     line-height: 1em;
     border: 1px solid fade(black, 10%);
-    background-color: @contrast-color;
+    background-color: white;
 }
 input {
     height: 2.5em;
@@ -134,7 +134,7 @@ button {
     .single-line-text;
     text-transform: uppercase;
     .transition(background-color .35s ease);
-    .background-color-states(@button-color);
+    .background-color-states(@default-color);
     &[disabled] {
         opacity: .5;
     }
